@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d8f6ee08-4619-4599-9b1c-ae6378857071" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TriggerZone.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LineDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Refresh.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/JointRipper.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Refresh.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LineDrawer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TriggerZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/JointRipper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Drag.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1iunfz6hLkNO4CO1HeKdWeKXFgm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d8f6ee08-4619-4599-9b1c-ae6378857071" name="Default Changelist" comment="" />
+      <created>1602766455502</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602766455502</updated>
+      <workItem from="1602766465056" duration="172000" />
+      <workItem from="1602830449860" duration="6849000" />
+      <workItem from="1603176871107" duration="1678000" />
+      <workItem from="1603260535645" duration="3276000" />
+      <workItem from="1603266430198" duration="938000" />
+      <workItem from="1603345583001" duration="3712000" />
+      <workItem from="1603353891271" duration="2380000" />
+      <workItem from="1603436562577" duration="638000" />
+      <workItem from="1603453086026" duration="2743000" />
+      <workItem from="1603689500158" duration="2267000" />
+      <workItem from="1603697409323" duration="2401000" />
+      <workItem from="1603780314841" duration="6741000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="571" y="91" key="RiderGenerateDialog" timestamp="1603261977464">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="571" y="91" key="RiderGenerateDialog/0.0.1536.834@0.0.1536.834" timestamp="1603261977464" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1602830546543">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1602830546543" />
+  </component>
+</project>
