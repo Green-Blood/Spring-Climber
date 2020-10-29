@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7751238c31215b44a8a20cd5e2bd0a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limitRadius: 5
+  limitRadius: 3
 --- !u!4 &905274345 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7586606072488662524, guid: 47ddfa17bc8333e4d9ec688d4ecfa2b9,
