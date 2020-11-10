@@ -8,6 +8,8 @@ namespace Drags
     {
         [SerializeField] private float limitRadius;
         [SerializeField] private CameraMover cameraMover;
+        [SerializeField] private SlingShot slingShot;
+        [SerializeField] private ConnectionChecker connectionChecker;
 
         private Vector3 _mOffset;
         private float _mZCoord;
@@ -37,7 +39,6 @@ namespace Drags
             _mZCoord = _camera.WorldToScreenPoint(_position).z;
             _mOffset = _position - GetMouseAsWorldPoint();
             cameraMover.ZoomOut();
-             
         }
 
         private void OnMouseDrag()
@@ -46,21 +47,29 @@ namespace Drags
             _position = GetMouseAsWorldPoint() + _mOffset;
             LimitDrag();
             transform.position = _position;
-            
         }
 
-        
 
-        private void OnMouseUpAsButton()
+        private void OnMouseUp()
         {
             if (!CanDrag) return;
+            connectionChecker.RemoveSprings();
             cameraMover.ZoomIn();
+            //Debug.Log("Difference is" + GetDifference());
+            slingShot.ShotBall(GetDirection());
         }
 
         private void LimitDrag()
         {
             var allowedPosition = _position - _initialPosition;
             _position = _initialPosition + Vector3.ClampMagnitude(allowedPosition, limitRadius);
+        }
+
+        private Vector3 GetDirection()
+        {
+            Vector3 direction = _position - _initialPosition;
+            direction.Normalize();
+            return direction;
         }
 
 
