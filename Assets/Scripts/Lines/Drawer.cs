@@ -4,23 +4,17 @@ namespace Lines
 {
     public class Drawer : MonoBehaviour
     {
-        [SerializeField] private Rigidbody cube;
         [SerializeField] private LineCreator lineCreator;
         [SerializeField] private SpringJoint springJoint;
 
 
+        private bool IsConnectedBodyNotNull() => springJoint.connectedBody != null;
+
         private void Update()
         {
-            if (springJoint != null)
+            if (IsConnectedBodyNotNull())
             {
-                if (springJoint.connectedBody == cube)
-                {
-                    lineCreator.DrawLine(transform.position, cube.transform.position);
-                }
-                else if (springJoint.connectedBody != cube)
-                {
-                    lineCreator.ResetLine();
-                }
+                lineCreator.DrawLine(transform.position, springJoint.connectedBody.transform.position);
             }
             else
             {

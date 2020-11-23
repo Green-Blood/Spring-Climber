@@ -1,50 +1,61 @@
-﻿using System;
-using CameraMovement;
+﻿using CameraMovement;
 using UnityEngine;
 
 namespace Drags
 {
     public class TriggerZone : MonoBehaviour
     {
-        [SerializeField] private Rigidbody cube;
         [SerializeField] private SpringJoint cylinder1;
         [SerializeField] private SpringJoint cylinder2;
-        [SerializeField] private CameraMover cameraMover;
-        [SerializeField] private ConnectionChecker connectionChecker;
 
-        
-        private void OnTriggerEnter(Collider other)
+        private bool _hasConnected;
+        private float _allowedVelocity;
+        private Drag _drag;
+
+        private void OnTriggerStay(Collider other)
         {
-            if (other.CompareTag("Cube"))
-            {
-                ConnectObject();
-                cameraMover.MoveCamera(cylinder1.transform.position.y);
-                connectionChecker.CheckConnection();
-            }
-               
+            if (!other.CompareTag("Cube")) return;
+            if (_hasConnected) return;
+
+            var rigidBody = other.GetComponent<Rigidbody>();
+            _allowedVelocity = other.GetComponent<Cube>().AllowedSpeed;
+            if (!HasSmallSpeed(rigidBody)) return;
+
+            if (IsHigher(other.transform.position)) return;
+            _drag = other.GetComponent<Drag>();
+             
+
+            ConnectObject(rigidBody);
+            CalculateDifference();
+
+            _drag.CanDrag = true;
+            ConnectionChecker.Instance.CheckConnection();
+            _hasConnected = true;
         }
 
-        private void ConnectObject()
-        {
-            cylinder1.connectedBody = cube;
-            cylinder2.connectedBody = cube;
-        }
+        private bool IsHigher(Vector3 position) => position.y > transform.position.y;
 
-        public void DisconnectObject()
+        private bool HasSmallSpeed(Rigidbody rigidBody)
         {
-            cylinder1.connectedBody = null;
-            cylinder2.connectedBody = null;
-        }
-
-        private void OnMouseUpAsButton()
-        {
-            if (cylinder1.connectedBody != null && cylinder2.connectedBody != null)
-            {
-                DisconnectObject();
-            }
-
             
+            return -_allowedVelocity > rigidBody.velocity.y || rigidBody.velocity.y < _allowedVelocity;
         }
+
+        private void ConnectObject(Rigidbody rigidBody)
+        {
+            cylinder1.connectedBody = rigidBody;
+            cylinder2.connectedBody = rigidBody;
+            _drag.AttachSpring1(cylinder1, cylinder2);
+            ConnectionChecker.Instance.AddSpring(cylinder1, cylinder2);
+        }
+
+        private void CalculateDifference()
+        {
+            var difference = new Vector3(((cylinder2.transform.position.x + cylinder1.transform.position.x) / 2),
+                transform.position.y, 0);
+            _drag.DesiredPosition = difference;
+        }
+
 
         #region OldCode
 

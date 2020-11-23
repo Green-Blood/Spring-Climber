@@ -7,15 +7,17 @@ namespace Drags
     {
         [SerializeField] private float force;
         private Rigidbody _rigidbody;
+        #region UI
 
-        private void Awake()
+        public float Force
         {
-            _rigidbody = GetComponent<Rigidbody>();
+            get => force;
+            set => force = value;
         }
 
-        public void ShotBall(Vector3 direction)
-        {
-            _rigidbody.AddForce(direction * -force, ForceMode.Impulse);
-        }
+        #endregion
+        
+        private void Awake() => _rigidbody = GetComponent<Rigidbody>();
+        public void ShotBall(Vector2 direction) => _rigidbody.AddForce(direction * -force, ForceMode.Impulse);
     }
 }

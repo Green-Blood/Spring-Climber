@@ -61,6 +61,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,6 +86,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &920465825038673034
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -93,7 +95,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920465825038673037}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -125,19 +127,19 @@ SpringJoint:
   m_ConnectedBody: {fileID: 0}
   m_Anchor: {x: 0, y: 1.0000002, z: 0}
   m_AutoConfigureConnectedAnchor: 0
-  m_ConnectedAnchor: {x: 2.5, y: -1.5, z: -1.0000004}
+  m_ConnectedAnchor: {x: -2.5, y: 1.503924, z: -0.0000003576279}
   serializedVersion: 2
-  m_Spring: 1
-  m_Damper: 0
+  m_Spring: 100
+  m_Damper: 2
   m_MinDistance: 0
   m_MaxDistance: 0
   m_Tolerance: 0.025
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 1
+  m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 10
+  m_ConnectedMassScale: 1
 --- !u!120 &2631118935889731389
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -153,6 +155,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -247,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1bf3fbd94b7054c96b88ac68617262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 0}
+  cube: {fileID: 9213645040428338735, guid: 29517cdbc858da548b58887f3b1c0f9b, type: 3}
   lineCreator: {fileID: 920465825038673038}
   springJoint: {fileID: 920465825038673030}
 --- !u!114 &920465825038673038
@@ -288,8 +291,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7318117181566174602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.5, y: 0, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 7318117181770537643}
   m_RootOrder: 2
@@ -306,11 +309,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60e7305109adc244ba7d1d819d1ab67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 0}
+  cube: {fileID: 9213645040428338726, guid: 29517cdbc858da548b58887f3b1c0f9b, type: 3}
   cylinder1: {fileID: 920465825038673030}
   cylinder2: {fileID: 7318117181588075294}
-  cameraMover: {fileID: 0}
-  connectionChecker: {fileID: 0}
+  connectionChecker: {fileID: 417542323497754917, guid: b176d48e7578d2d45a39fd7ca269f1f4,
+    type: 3}
 --- !u!65 &7318117181566174604
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -319,11 +322,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7318117181566174602}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 0.15, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.9606886, y: 0.681077, z: 1.5}
+  m_Center: {x: 0.4803443, y: 0.11381078, z: -0.3}
 --- !u!1 &7318117181588075288
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +388,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -409,6 +413,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &7318117181588075264
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -417,7 +422,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7318117181588075288}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -449,19 +454,19 @@ SpringJoint:
   m_ConnectedBody: {fileID: 0}
   m_Anchor: {x: 0, y: 1.0000002, z: 0}
   m_AutoConfigureConnectedAnchor: 0
-  m_ConnectedAnchor: {x: 2.5, y: -1.5, z: -1.0000004}
+  m_ConnectedAnchor: {x: 2.5, y: 1.503924, z: -0.0000003576279}
   serializedVersion: 2
-  m_Spring: 1
-  m_Damper: 0
+  m_Spring: 100
+  m_Damper: 2
   m_MinDistance: 0
   m_MaxDistance: 0
   m_Tolerance: 0.025
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 1
+  m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 10
+  m_ConnectedMassScale: 1
 --- !u!120 &7318117181588075293
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -477,6 +482,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -583,7 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1bf3fbd94b7054c96b88ac68617262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 0}
+  cube: {fileID: 9213645040428338735, guid: 29517cdbc858da548b58887f3b1c0f9b, type: 3}
   lineCreator: {fileID: 7318117181588075292}
   springJoint: {fileID: 7318117181588075294}
 --- !u!1 &7318117181770537641

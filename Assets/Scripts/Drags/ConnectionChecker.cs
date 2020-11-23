@@ -4,42 +4,61 @@ using UnityEngine;
 
 namespace Drags
 {
-    public class ConnectionChecker : MonoBehaviour
+    public class ConnectionChecker : SingletonClass<ConnectionChecker>
     {
-        // public bool IsConnected { get; set; }
+        private List<SpringJoint> _springJoint;
 
-        [SerializeField] private SpringJoint[] springJoint;
-
-        public void RemoveSprings()
+        public override void Awake()
         {
-            foreach (var joint in springJoint)
-            {
-                if (joint != null)
-                {
-                    joint.connectedBody = null;
-                }
-            }
+            _springJoint = new List<SpringJoint>();
         }
 
         public void CheckConnection()
         {
             int counter = 0;
-            for (var index = springJoint.Length - 1; index >= 0; index--)
+            for (var index = _springJoint.Count - 1; index >= 0; index--)
             {
-                if (springJoint[index].connectedBody != null)
-                {
-                    counter++;
-                    if (counter > 2)
-                    {
-                        springJoint[index].connectedBody = null;
-                    }
-                }
+                if (_springJoint[index].connectedBody == null) continue;
+                counter++;
+                if (counter <= 2) continue;
+
+                _springJoint[index].connectedBody = null;
+                RemoveSpring(_springJoint[index]);
             }
         }
+
+        public void AddSpring(SpringJoint joint1, SpringJoint joint2)
+        {
+            _springJoint.Add(joint1);
+            _springJoint.Add(joint2);
+        }
+
+        private void RemoveSpring(SpringJoint joint1) => _springJoint.Remove(joint1);
 
 
         #region OldCode
 
+        private void Start()
+        {
+            // _springJoint = new SpringJoint[LevelGenerator.Instance.Cylinders.Count];
+            //
+            // for (int i = 0; i < LevelGenerator.Instance.Cylinders.Count; i++)
+            // {
+            //     _springJoint[i] =  LevelGenerator.Instance.Cylinders[i].GetComponent<SpringJoint>();
+            // }
+        }
+
+        // public void RemoveSprings()
+        // {
+        //     foreach (var joint in _springJoint)
+        //     {
+        //         if (joint != null)
+        //         {
+        //             joint.connectedBody = null;
+        //             drag.CanDrag = false;
+        //         }
+        //     }
+        // }
         //
         // //[SerializeField] private GameObject[] cylinders;
         // [SerializeField] private GameObject cube;
